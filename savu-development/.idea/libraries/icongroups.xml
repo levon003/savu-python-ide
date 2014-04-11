@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="icongroups">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RText/extra/icongroups/BlueSphereIcons.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/extra/icongroups/XPIcons.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/extra/icongroups/JavaIcons.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/extra/icongroups/EclipseIcons.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

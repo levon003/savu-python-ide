@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RText/RText.iml" filepath="$PROJECT_DIR$/RText/RText.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RText/extra/extra.iml" filepath="$PROJECT_DIR$/RText/extra/extra.iml" />
+    </modules>
+  </component>
+</project>
+

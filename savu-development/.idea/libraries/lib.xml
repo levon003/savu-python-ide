@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RText/lib/language_support.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/js-14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/rsta_spellchecker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/jsonbeans.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/english_dic.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/jtidy-r938.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/autocomplete.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/rsyntaxtextarea.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/groovy-all-1.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/RText/lib/rstaui.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

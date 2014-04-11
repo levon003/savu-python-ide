@@ -1,0 +1,441 @@
+def basestring():
+This abstract type is the superclass for str and unicode. It cannot be called or instantiated, but it can be used to test whether an object is an instance of str or unicode. isinstance(obj, basestring) is equivalent to isinstance(obj, (str, unicode)).
+
+def bytearray([source[, encoding[, errors]]]):
+Return a new array of bytes. The bytearray type is a mutable sequence of integers in the range 0 <= x < 256. It has most of the usual methods of mutable sequences, described in Mutable Sequence Types, as well as most methods that the str type has, see String Methods.
+
+The optional source parameter can be used to initialize the array in a few different ways:
+
+If it is a string, you must also give the encoding (and optionally, errors) parameters; bytearray() then converts the string to bytes using str.encode().
+If it is an integer, the array will have that size and will be initialized with null bytes.
+If it is an object conforming to the buffer interface, a read-only buffer of the object will be used to initialize the bytes array.
+If it is an iterable, it must be an iterable of integers in the range 0 <= x < 256, which are used as the initial contents of the array.
+Without an argument, an array of size 0 is created.
+
+def callable(object):
+Return True if the object argument appears callable, False if not. If this returns true, it is still possible that a call fails, but if it is false, calling object will never succeed. Note that classes are callable (calling a class returns a new instance); class instances are callable if they have a __call__() method.
+	
+def classmethod(function):
+Return a class method for function.
+
+A class method receives the class as implicit first argument, just like an instance method receives the instance. 
+        ...
+The @classmethod form is a function decorator ��� see the description of function definitions in Function definitions for details.
+
+It can be called either on the class (such as C.f()) or on an instance (such as C().f()). The instance is ignored except for its class. If a class method is called for a derived class, the derived class object is passed as the implied first argument.
+
+Class methods are different than C++ or Java static methods. If you want those, see staticmethod() in this section.
+
+For more information on class methods, consult the documentation on the standard type hierarchy in The standard type hierarchy.
+
+def delattr(object, name):
+This is a relative of setattr(). The arguments are an object and a string. The string must be the name of one of the object���s attributes. The function deletes the named attribute, provided the object allows it. For example, delattr(x, 'foobar') is equivalent to del x.foobar.
+
+def divmod(a,b):
+Take two (non complex) numbers as arguments and return a pair of numbers consisting of their quotient and remainder when using long division. With mixed operand types, the rules for binary arithmetic operators apply. For plain and long integers, the result is the same as (a // b, a % b). For floating point numbers the result is (q, a % b), where q is usually math.floor(a / b) but may be 1 less than that. In any case q * b + a % b is very close to a, if a % b is non-zero it has the same sign as b, and 0 <= abs(a % b) < abs(b).
+
+def enumerate(sequence, start=0):
+Return an enumerate object. sequence must be a sequence, an iterator, or some other object which supports iteration. The next() method of the iterator returned by enumerate() returns a tuple containing a count (from start which defaults to 0) and the values obtained from iterating over sequence:
+
+def filter(function, iterable):
+Construct a list from those elements of iterable for which function returns true. iterable may be either a sequence, a container which supports iteration, or an iterator. If iterable is a string or a tuple, the result also has that type; otherwise it is always a list. If function is None, the identity function is assumed, that is, all elements of iterable that are false are removed.
+
+Note that filter(function, iterable) is equivalent to [item for item in iterable if function(item)] if function is not None and [item for item in iterable if item] if function is None.
+
+See itertools.ifilter() and itertools.ifilterfalse() for iterator versions of this function, including a variation that filters for elements where the function returns false.
+
+def getattr(object, name [,default]):
+Return the value of the named attribute of object. name must be a string. If the string is the name of one of the object���s attributes, the result is the value of that attribute. For example, getattr(x, 'foobar') is equivalent to x.foobar. If the named attribute does not exist, default is returned if provided, otherwise AttributeError is raised.
+
+def hasattr(object, name):
+The arguments are an object and a string. The result is True if the string is the name of one of the object���s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an exception or not.)
+
+def input([prompt]):
+Equivalent to eval(raw_input(prompt)).
+
+This function does not catch user errors. If the input is not syntactically valid, a SyntaxError will be raised. Other exceptions may be raised if there is an error during evaluation.
+
+If the readline module was loaded, then input() will use it to provide elaborate line editing and history features.
+
+Consider using the raw_input() function for general input from users.
+
+def isinstance(object, classinfo):
+Return true if the object argument is an instance of the classinfo argument, or of a (direct, indirect or virtual) subclass thereof. Also return true if classinfo is a type object (new-style class) and object is an object of that type or of a (direct, indirect or virtual) subclass thereof. If object is not a class instance or an object of the given type, the function always returns false. If classinfo is neither a class object nor a type object, it may be a tuple of class or type objects, or may recursively contain other such tuples (other sequence types are not accepted). If classinfo is not a class, type, or tuple of classes, types, and such tuples, a TypeError exception is raised.
+
+def issubclass(class, classinfo):
+Return true if class is a subclass (direct, indirect or virtual) of classinfo. A class is considered a subclass of itself. classinfo may be a tuple of class objects, in which case every entry in classinfo will be checked. In any other case, a TypeError exception is raised.
+
+def locals():
+Update and return a dictionary representing the current local symbol table. Free variables are returned by locals() when it is called in function blocks, but not in class blocks.
+
+Note The contents of this dictionary should not be modified; changes may not affect the values of local and free variables used by the interpreter.
+
+def memoryview(obj):
+Return a ���memory view��� object created from the given argument. See memoryview type for more information.
+
+def raw_input([prompt]):
+If the prompt argument is present, it is written to standard output without a trailing newline. The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that. When EOF is read, EOFError is raised.
+
+def reduce(function, iterable[, initializer]):
+
+def reload()
+def reversed()
+def round()
+def setattr()
+def slice()
+def sorted()
+def staticmethod()
+def tuple()
+def type()
+def unichr()
+def unicode()
+def vars()
+def xrange()
+def __import__()
+def apply()
+def buffer()
+def coerce()
+def intern()
+
+class String:
+	def capitalize():
+Return a copy of the string with its first character capitalized and the rest lowercased.
+
+For 8-bit strings, this method is locale-dependent.
+	def center(width[, fillchar]):
+Return centered in a string of length width. Padding is done using the specified fillchar (default is a space).
+
+
+	def count(sub[, start[, end]]):
+Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
+
+
+	def decode([encoding[, errors]]):
+Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding. errors may be given to set a different error handling scheme. The default is 'strict', meaning that encoding errors raise UnicodeError. Other possible values are 'ignore', 'replace' and any other name registered via codecs.register_error(), see section Codec Base Classes.
+	def encode([encoding,[ errors]]):
+Return an encoded version of the string. Default encoding is the current default string encoding. errors may be given to set a different error handling scheme. The default for errors is 'strict', meaning that encoding errors raise a UnicodeError. Other possible values are 'ignore', 'replace', 'xmlcharrefreplace', 'backslashreplace' and any other name registered via codecs.register_error(), see section Codec Base Classes. For a list of possible encodings, see section Standard Encodings.
+
+	def endswith(suffix[, start[, end]]):
+Return True if the string ends with the specified suffix, otherwise return False. suffix can also be a tuple of suffixes to look for. With optional start, test beginning at that position. With optional end, stop comparing at that position.
+	def expandtabs([tabsize]):
+Return a copy of the string where all tab characters are replaced by one or more spaces, depending on the current column and the given tab size. Tab positions occur every tabsize characters (default is 8, giving tab positions at columns 0, 8, 16 and so on). To expand the string, the current column is set to zero and the string is examined character by character. If the character is a tab (\t), one or more space characters are inserted in the result until the current column is equal to the next tab position. (The tab character itself is not copied.) If the character is a newline (\n) or return (\r), it is copied and the current column is reset to zero. Any other character is copied unchanged and the current column is incremented by one regardless of how the character is represented when printed.
+	def find(sub[, start[, end]]):
+Return the lowest index in the string where substring sub is found, such that sub is contained in the slice s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found.
+	def format(*args, **kwargs):
+Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.
+
+>>>
+>>> "The sum of 1 + 2 is {0}".format(1+2)
+'The sum of 1 + 2 is 3'
+See Format String Syntax for a description of the various formatting options that can be specified in format strings.
+
+This method of string formatting is the new standard in Python 3, and should be preferred to the % formatting described in String Formatting Operations in new code.
+	def index(sub[, start[, end]]):
+Like find(), but raise ValueError when the substring is not found.
+
+
+	def isalnum():
+Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+	def isalpha():
+Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+	def isdigit():
+Return true if all characters in the string are digits and there is at least one character, false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+
+
+	def islower():
+Return true if all cased characters [4] in the string are lowercase and there is at least one cased character, false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+
+
+	def isspace():
+Return true if there are only whitespace characters in the string and there is at least one character, false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+	def istitle():
+Return true if the string is a titlecased string and there is at least one character, for example uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+	def isupper():
+Return true if all cased characters [4] in the string are uppercase and there is at least one cased character, false otherwise.
+
+For 8-bit strings, this method is locale-dependent.
+	def join(iterable):
+Return a string which is the concatenation of the strings in the iterable iterable. The separator between elements is the string providing this method.
+	def ljust(width[, fillchar]):
+Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).
+
+Changed in version 2.4: Support for the fillchar argument.
+
+
+	def lower():
+Return a copy of the string with all the cased characters [4] converted to lowercase.
+
+For 8-bit strings, this method is locale-dependent.
+	def lstrip([chars]):
+Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix; rather, all combinations of its values are stripped:
+
+
+	def partition(sep):
+Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing the string itself, followed by two empty strings.
+	def replace(old, new[, count]):
+Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
+	def rfind(sub[, start[, end]]):
+Return the highest index in the string where substring sub is found, such that sub is contained within s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 on failure.
+
+
+	def rindex(sub[, start[, end]]):
+Like rfind() but raises ValueError when the substring sub is not found.
+
+
+	def rjust(width[, fillchar]):
+Return the string right justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).
+
+
+	def rpartition(sep):
+Split the string at the last occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing two empty strings, followed by the string itself.
+
+
+	def rsplit([sep[, maxsplit]]):
+Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done, the rightmost ones. If sep is not specified or None, any whitespace string is a separator. Except for splitting from the right, rsplit() behaves like split() which is described in detail below.
+
+
+	def rstrip([chars]):
+Return a copy of the string with trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a suffix; rather, all combinations of its values are stripped:
+
+
+	def split([sep[, maxsplit]]):
+Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
+
+If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, '1,,2'.split(',') returns ['1', '', '2']). The sep argument may consist of multiple characters (for example, '1<>2<>3'.split('<>') returns ['1', '2', '3']). Splitting an empty string with a specified separator returns [''].
+
+If sep is not specified or is None, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a None separator returns [].
+
+For example, ' 1  2   3  '.split() returns ['1', '2', '3'], and '  1  2   3  '.split(None, 1) returns ['1', '2   3  '].
+	def splitlines([keepends]):
+Return a list of the lines in the string, breaking at line boundaries. This method uses the universal newlines approach to splitting lines. Line breaks are not included in the resulting list unless keepends is given and true.
+
+For example, 'ab c\n\nde fg\rkl\r\n'.splitlines() returns ['ab c', '', 'de fg', 'kl'], while the same call with splitlines(True) returns ['ab c\n', '\n', 'de fg\r', 'kl\r\n'].
+
+Unlike split() when a delimiter string sep is given, this method returns an empty list for the empty string, and a terminal line break does not result in an extra line.
+	def startswith(prefix[, start[, end]]):
+Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
+	def strip([chars]):
+Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped:
+
+>>>
+>>> '   spacious   '.strip()
+'spacious'
+>>> 'www.example.com'.strip('cmowz.')
+'example'
+	def swapcase():
+Return a copy of the string with uppercase characters converted to lowercase and vice versa.
+
+For 8-bit strings, this method is locale-dependent.
+	def title():
+Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.
+
+The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:
+
+>>>
+>>> "they're bill's friends from the UK".title()
+"They'Re Bill'S Friends From The Uk"
+	def translate(table[, deletechars]):
+Return a copy of the string where all characters occurring in the optional argument deletechars are removed, and the remaining characters have been mapped through the given translation table, which must be a string of length 256.
+
+You can use the maketrans() helper function in the string module to create a translation table. For string objects, set the table argument to None for translations that only delete characters:
+
+>>>
+>>> 'read this short text'.translate(None, 'aeiou')
+'rd ths shrt txt'
+New in version 2.6: Support for a None table argument.
+
+For Unicode objects, the translate() method does not accept the optional deletechars argument. Instead, it returns a copy of the s where all characters have been mapped through the given translation table which must be a mapping of Unicode ordinals to Unicode ordinals, Unicode strings or None. Unmapped characters are left untouched. Characters mapped to None are deleted. Note, a more flexible approach is to create a custom character mapping codec using the codecs module (see encodings.cp1251 for an example).
+	def upper():
+Return a copy of the string with all the cased characters [4] converted to uppercase. Note that str.upper().isupper() might be False if s contains uncased characters or if the Unicode category of the resulting character(s) is not ���Lu��� (Letter, uppercase), but e.g. ���Lt��� (Letter, titlecase).
+
+For 8-bit strings, this method is locale-dependent.
+	def zfill(width):
+Return the numeric string left filled with zeros in a string of length width. A sign prefix is handled correctly. The original string is returned if width is less than or equal to len(s).
+
+class list:
+	def append(x):
+Add an item to the end of the list; equivalent to a[len(a):] = [x].
+
+	def count(x):
+Return the number of times x appears in the list.
+
+
+	def extend(L):
+Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.
+	def index(x):
+Return the index in the list of the first item whose value is x. It is an error if there is no such item.
+
+
+	def insert(i, x):
+Insert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).
+
+
+	def pop([i]):
+Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)
+	def remove(x):
+Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+	def reverse():
+Reverse the elements of the list, in place.
+
+
+	def sort():
+Sort the items of the list, in place.
+
+
+
+class set:
+	def len(s):
+Return the cardinality of set s.
+
+	def isdisjoint(other):
+Return True if the set has no elements in common with other. Sets are disjoint if and only if their intersection is the empty set.
+	def issubset(other):
+	def issuperset(other):
+	def union(other):
+	def intersection(other):
+	def difference(other):
+	def symmetric_difference(other):
+	def copy():
+Return a new set with a shallow copy of s.
+
+
+	def update(other):
+	def intersection_update(other):
+	def difference_update(other):
+	def summetric_difference_update(other):
+	def symmetric_difference_update(other):
+	def add(elem):
+Add element elem to the set.
+
+
+	def remove(elem):
+Remove element elem from the set. Raises KeyError if elem is not contained in the set.
+
+
+	def discard(elem):
+Remove element elem from the set if it is present.
+
+
+	def pop():
+Remove and return an arbitrary element from the set. Raises KeyError if the set is empty.
+
+
+	def clear():
+Remove all elements from the set.
+
+
+
+class dict:
+	def clear():
+Remove all items from the dictionary.
+
+
+	def copy():
+Return a shallow copy of the dictionary.
+
+
+	def fromkeys(seq[, value]):
+Create a new dictionary with keys from seq and values set to value.
+
+fromkeys() is a class method that returns a new dictionary. value defaults to None.
+	def get(key[, default]):
+Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
+
+
+	def has_key(key):
+Test for the presence of key in the dictionary. has_key() is deprecated in favor of key in d.
+
+
+	def items():
+Return a copy of the dictionary���s list of (key, value) pairs.
+
+CPython implementation detail: Keys and values are listed in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary���s history of insertions and deletions.
+
+If items(), keys(), values(), iteritems(), iterkeys(), and itervalues() are called with no intervening modifications to the dictionary, the lists will directly correspond. This allows the creation of (value, key) pairs using zip(): pairs = zip(d.values(), d.keys()). The same relationship holds for the iterkeys() and itervalues() methods: pairs = zip(d.itervalues(), d.iterkeys()) provides the same value for pairs. Another way to create the same list is pairs = [(v, k) for (k, v) in d.iteritems()].
+	def iteritems():
+Return an iterator over the dictionary���s (key, value) pairs. See the note for dict.items().
+
+Using iteritems() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
+	def iterkeys():
+Return an iterator over the dictionary���s keys. See the note for dict.items().
+
+Using iterkeys() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
+	def intervalues():
+Return an iterator over the dictionary���s values. See the note for dict.items().
+
+Using itervalues() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.
+	def keys():
+Return a copy of the dictionary���s list of keys. See the note for dict.items().
+
+	def pop(key[, defafult]):
+If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.
+
+
+	def popitem():
+Remove and return an arbitrary (key, value) pair from the dictionary.
+
+popitem() is useful to destructively iterate over a dictionary, as often used in set algorithms. If the dictionary is empty, calling popitem() raises a KeyError.
+
+
+	def setdefault(key[, default]):
+If key is in the dictionary, return its value. If not, insert key with a value of default and return default. default defaults to None.
+
+
+	def update([other]):
+Update the dictionary with the key/value pairs from other, overwriting existing keys. Return None.
+
+update() accepts either another dictionary object or an iterable of key/value pairs (as tuples or other iterables of length two). If keyword arguments are specified, the dictionary is then updated with those key/value pairs: d.update(red=1, blue=2).
+
+
+	def values():
+Return a copy of the dictionary���s list of values. See the note for dict.items().
+
+
+	def viewitems():
+Return a new view of the dictionary���s items ((key, value) pairs). See below for documentation of view objects.
+
+
+	def viewkeys():
+Return a new view of the dictionary���s keys. See below for documentation of view objects.
+
+
+	def viewvalues():
+Return a new view of the dictionary���s values. See below for documentation of view objects.
+
+
+
+class file:
+	def close():
+	def flush():
+	def fileno():
+	def isatty():
+	def next():
+	def read():
+	def readlines():
+	def xreadlines():
+	def seek():
+	def tell():
+	def truncate():
+	def write():
+	def writelines():
+	closed	=
+	encoding =
+	errors =
+	mode =
+	name =
+	newlines =
+	softspace =

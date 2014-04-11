@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_extra" default="compile.module.extra">
+  <dirname property="module.extra.basedir" file="${ant.file.module_extra}"/>
+  
+  <property name="module.jdk.home.extra" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.extra" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.extra" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.extra" value="${compiler.args}"/>
+  
+  <property name="extra.output.dir" value="${module.extra.basedir}/../../out/production/extra"/>
+  <property name="extra.testoutput.dir" value="${module.extra.basedir}/../../out/test/extra"/>
+  
+  <path id="extra.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="extra.module.production.classpath">
+    <path refid="${module.jdk.classpath.extra}"/>
+  </path>
+  
+  <path id="extra.runtime.production.module.classpath">
+    <pathelement location="${extra.output.dir}"/>
+  </path>
+  
+  <path id="extra.module.classpath">
+    <path refid="${module.jdk.classpath.extra}"/>
+    <pathelement location="${extra.output.dir}"/>
+  </path>
+  
+  <path id="extra.runtime.module.classpath">
+    <pathelement location="${extra.testoutput.dir}"/>
+    <pathelement location="${extra.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.extra">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.extra">
+    <patternset refid="excluded.from.module.extra"/>
+  </patternset>
+  
+  <path id="extra.module.sourcepath">
+    <dirset dir="${module.extra.basedir}">
+      <include name="exampleMacros"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.extra" depends="compile.module.extra.production,compile.module.extra.tests" description="Compile module extra"/>
+  
+  <target name="compile.module.extra.production" depends="register.custom.compilers" description="Compile module extra; production classes">
+    <mkdir dir="${extra.output.dir}"/>
+    <javac2 destdir="${extra.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.extra}/javac">
+      <compilerarg line="${compiler.args.extra}"/>
+      <bootclasspath refid="extra.module.bootclasspath"/>
+      <classpath refid="extra.module.production.classpath"/>
+      <src refid="extra.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.extra"/>
+    </javac2>
+    
+    <copy todir="${extra.output.dir}">
+      <fileset dir="${module.extra.basedir}/exampleMacros">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.extra.tests" depends="register.custom.compilers,compile.module.extra.production" description="compile module extra; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.extra" description="cleanup module">
+    <delete dir="${extra.output.dir}"/>
+    <delete dir="${extra.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,27 @@
+'''Here is an example of what the syntax highlighting will look like on some Python code'''
+
+class Omanyte:
+    def __init__(self):
+        self.fossil = "helix"
+        self.level = 40
+    
+    def useHelix(self, situation):
+        if situation == "battle":
+            print "Now is not the time to use that!"
+
+def summonOmanyte():
+    lord = Omanyte()
+    return lord
+
+# Oh myyyy!
+def main():
+    trouble = 0
+    for i in range(10):
+        trouble = trouble+1
+        print "Trouble Increasing!"
+    if trouble > 5:
+        savior = summonOmanyte()
+        
+        
+        
+main()

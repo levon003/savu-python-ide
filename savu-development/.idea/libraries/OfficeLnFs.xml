@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="OfficeLnFs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RText/extra/lnfs/OfficeLnFs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

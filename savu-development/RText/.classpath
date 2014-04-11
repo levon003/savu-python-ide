@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="i18n"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Common"/>
+	<classpathentry kind="lib" path="/Common/extra"/>
+	<classpathentry kind="lib" path="lib/rsta_spellchecker.jar"/>
+	<classpathentry kind="lib" path="lib/rsyntaxtextarea.jar"/>
+	<classpathentry kind="lib" path="lib/language_support.jar"/>
+	<classpathentry kind="lib" path="lib/jtidy-r938.jar"/>
+	<classpathentry kind="lib" path="lib/rstaui.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/laf-plugin-7.2.1.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/laf-widget-7.2.1.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/substance-7.2.1-tools.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/substance-7.2.1.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/trident-7.2.1-base.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/trident-7.2.1-swing.jar"/>
+	<classpathentry kind="lib" path="/Common/lib/substance/trident-7.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/swingx.jar"/>
+	<classpathentry kind="lib" path="lib/JTattoo-1.6.10.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

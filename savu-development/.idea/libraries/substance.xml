@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="substance">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/laf-widget-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/trident-7.2.1-swing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/trident-7.2.1-base.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/substance-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/laf-plugin-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/trident-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Common/lib/substance/substance-7.2.1-tools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
